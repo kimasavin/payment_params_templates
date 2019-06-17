@@ -1,0 +1,72 @@
+.footer_left {
+    margin-bottom: 30px;
+}
+
+.header, .order_in {
+    background-color: #e50341 !important;
+    padding-bottom: 23px;
+}
+
+.header * {
+    color: #ffffff !important;
+}
+
+.order {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+body {
+    background: url("/payment_params_templates/{{customization_merchant_id}}/images/background.png") repeat;
+}
+
+.order .order_more {
+    top: 75px;
+    background: transparent;
+    text-shadow: none;
+    border-bottom: none;
+    right: 15px;
+}
+
+.order .order_close {
+    background: transparent;
+    text-shadow: none;
+    border-bottom: none;
+    right: 15px;
+}
+
+.order {
+    height: 60px;
+}
+
+.order .order_in {
+    height: 90px;
+}
+
+.order .order_more::before {
+    background: none;
+}
+
+#timer {
+    margin: 0 auto;
+    font-weight: bold;
+    width: 250px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+#timeExpiredMessage {
+    margin: 0 auto;
+    font-weight: bold;
+    width: 60%;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: #36B4D1;
+}

@@ -6,16 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="format-detection" content="telephone=no">
 
-        <link rel="stylesheet" media="all" href="/css/payment_params.css" >
-        <!--<link rel="stylesheet" media="all" href="/payment_params_templates/{{customization_merchant_id}}/css/your.css" >-->
+        <link rel="stylesheet" media="all" href="./../../../css/payment_params.css" >
+        <link rel="stylesheet" media="all" href="./../css/pryamaya.css" >
 
-        <script type="text/javascript" src="/js/jquery.js"></script>
-        <script type="text/javascript" src="/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="./../../../js/jquery.js"></script>
+        <script type="text/javascript" src="./../../../js/jquery-ui.js"></script>
 
-        <script type="text/javascript" src="/js/jquery.payment_form.js"></script>
-        <script type="text/javascript" src="/js/header.js"></script>
+        <script type="text/javascript" src="./../../../js/jquery.payment_form.js"></script>
+        <script type="text/javascript" src="./../../../js/header.js"></script>
 
-        <script src="/bower/bower_components/hideshowpassword/hideShowPassword.js"></script>
+        <script type="text/javascript" src="./../js/timer.js"></script>
+
+        <script src="./../../../bower/bower_components/hideshowpassword/hideShowPassword.js"></script>
         <!-- INFO: Если хотите изменить способ отображения ошибок - нужно заменить этот блок блоком из setters.js -->        
         <script type="text/javascript">
             $(document).ready(function () {
@@ -46,9 +48,8 @@
             <header class="header">
                 <div class="header_in">
 
-                    <!-- INFO: Если хотите изменить добавить свой логотип - можете сделать это в блоке ниже -->
                     <div class="logos is_active">
-                        <!--Сюда можно вставить свой логотип. И скопировать в шаблон-->
+                        <img src="./../images/pryamaya-logo.png" alt="" />
                     </div>
 
                     <div class="order">
@@ -57,7 +58,7 @@
                             <div class="order_row">
                                 <div class="order_left">
                                     <div class="order_gray">Сумма заказа:</div>
-                                    <div class="order_price">55 000 <img src='/images/svg/currency/RUB.svg'></div>
+                                    <div class="order_price">55 000 <img src='./../images/currency/RUB.png'></div>
                                 </div>
                                 <div class="order_right">
                                     <div class="order_gray">Описание заказа:</div>
@@ -78,8 +79,16 @@
                     <div class="opted_item js_selected_tab_name"></div>
                 </div>
             </div>
-            <div class="wrapper wrapper_tabs">
 
+            <div id="timer" class="hidden">
+                Время на оплату: <span class="minutes">00</span>:<span class="seconds">00</span>
+                <input type="hidden" name="expireDate" value="2019-05-20 22:23:59" />
+            </div>
+            <div id="timeExpiredMessage" class="hidden">
+                К сожалению, время, отведенное на оплату, истекло. Пожалуйста, перейдите в <a href="google.com">мероприятие</a> и сделайте выбор заново.
+            </div>
+
+            <div class="wrapper wrapper_tabs">
                 <div class="tabs js_tab">
                     <ul class="tabs_group js_tab_catgories">
                         <!--CATEGORY-->
@@ -222,11 +231,11 @@
                                 <div class="accept_text">Мы принимаем</div>
                                 <ul class="accept_list">
                                     <!--CARD_TYPES-->
-                                    <li><i class="ico" title="VISA"><img class="ico ico_mps" src="/images/svg/mps/VISA.svg" alt="VISA"></i></li>
-                                    <li><i class="ico" title="VISA ELECTRON"><img class="ico ico_mps" src="/images/svg/mps/VISA ELECTRON.svg" alt="VISA ELECTRON"></i></li>
-                                    <li><i class="ico" title="MASTERCARD"><img class="ico ico_mps" src="/images/svg/mps/MASTERCARD.svg" alt="MASTERCARD"></i></li>
-                                    <li><i class="ico" title="MAESTRO"><img class="ico ico_mps" src="/images/svg/mps/MAESTRO.svg" alt="MAESTRO"></i></li>
-                                    <li><i class="ico" title="MIR"><img class="ico ico_mps" src="/images/svg/mps/MIR.svg" alt="MIR"></i></li>
+                                    <li><i class="ico" title="VISA"><img class="ico ico_mps" src="./../../../images/svg/mps/VISA.svg" alt="VISA"></i></li>
+                                    <li><i class="ico" title="VISA ELECTRON"><img class="ico ico_mps" src="./../../../images/svg/mps/VISA ELECTRON.svg" alt="VISA ELECTRON"></i></li>
+                                    <li><i class="ico" title="MASTERCARD"><img class="ico ico_mps" src="./../../../images/svg/mps/MASTERCARD.svg" alt="MASTERCARD"></i></li>
+                                    <li><i class="ico" title="MAESTRO"><img class="ico ico_mps" src="./../../../images/svg/mps/MAESTRO.svg" alt="MAESTRO"></i></li>
+                                    <li><i class="ico" title="MIR"><img class="ico ico_mps" src="./../../../images/svg/mps/MIR.svg" alt="MIR"></i></li>
                                     <!--/CARD_TYPES-->
                                 </ul>
                                 <input type="hidden" value="VI,CA" class="js_accepted_card_brands">
@@ -265,10 +274,10 @@
                                     <span class="checkout_text">Сумма с комиссией:</span>
                                     <div class="price">
                                         55 000
-                                        <img src='/images/svg/currency/RUB.svg'>
+                                        <img src='./../../../images/svg/currency/RUB.svg'>
                                     </div>
                                     <!--DIFFERENT_CURRENCY-->
-                                    <span class="currency">770 <img src='/images/svg/currency/USD.svg'></span>
+                                    <span class="currency">770 <img src='./../../../images/svg/currency/USD.svg'></span>
                                     <!--/DIFFERENT_CURRENCY-->
                                 </div>
                                 <button class="btn btn_green js_payment_button" type="submit"><span>Оплатить картой</span></button>
@@ -295,15 +304,15 @@
                                         <div class="payment_ico">
                                             <a href="/info/ru/mini/sbrf" target="_blank"><i class="ico ico_info instruction"></i></a>
                                             <span class="ico">
-                                                <img src="/images/svg/payment_systems/SBRF.svg" alt="SBRF">
+                                                <img src="./../../../images/svg/payment_systems/SBRF.svg" alt="SBRF">
                                             </span>
                                         </div>
                                         <div class="price js_inner_ps_price">
                                             55 000 
-                                            <img src='/images/svg/currency/RUB.svg'>
+                                            <img src='./../../../images/svg/currency/RUB.svg'>
                                         </div>
                                         <!--DIFFERENT_CURRENCY-->
-                                        <span class="currency">770 <img src='/images/svg/currency/USD.svg'></span>
+                                        <span class="currency">770 <img src='./../../../images/svg/currency/USD.svg'></span>
                                         <!--/DIFFERENT_CURRENCY-->
                                     </div>
                                     <div class="payment_item js_payment_system_item">
@@ -311,15 +320,15 @@
                                         <div class="payment_ico">
                                             <a href="/info/ru/mini/alfaclick" target="_blank"><i class="ico ico_info instruction"></i></a>
                                             <span class="ico">
-                                                <img src="/images/svg/payment_systems/ALFACLICK.svg" alt="ALFACLICK">
+                                                <img src="./../../../images/svg/payment_systems/ALFACLICK.svg" alt="ALFACLICK">
                                             </span>
                                         </div>
                                         <div class="price js_inner_ps_price">
                                             55 000 
-                                            <img src='/images/svg/currency/RUB.svg'>
+                                            <img src='./../../../images/svg/currency/RUB.svg'>
                                         </div>
                                         <!--DIFFERENT_CURRENCY-->
-                                        <span class="currency">770 <img src='/images/svg/currency/USD.svg'></span>
+                                        <span class="currency">770 <img src='./../../../images/svg/currency/USD.svg'></span>
                                         <!--/DIFFERENT_CURRENCY-->
                                     </div>
                                     <!--/NOT_BANKCARD_PAYMENT_SYSTEM-->
@@ -370,10 +379,10 @@
                                     <span class="checkout_text">Сумма с комиссией:</span>
                                     <div class="price js_price">
                                         55 000 
-                                        <img src='/images/svg/currency/RUB.svg'>
+                                        <img src='./../../../images/svg/currency/RUB.svg'>
                                     </div>
                                     <!--DIFFERENT_CURRENCY-->
-                                    <span class="currency">770 <img scr='/images/svg/currency/USD.svg'></span>
+                                    <span class="currency">770 <img scr='./../../../images/svg/currency/USD.svg'></span>
                                     <!--/DIFFERENT_CURRENCY-->
                                 </div>
                                 <button class="btn btn_green js_payment_button" type="submit"><span>Перейти к оплате</span></button>
@@ -413,8 +422,8 @@
                 <div class="footer_row">
                     <div class="footer_right">
                         <ul class="security">
-                            <li class="security_item"><i class="ico"><img src="/images/icons/comodo.png" alt="comodo"></i></li>
-                            <li class="security_item"><i class="ico"><a href="/images/pci-dss-certificate.jpg"><img src="/images/icons/pci-dss.png" alt="psi dss"></a></i></li>
+                            <li class="security_item"><i class="ico"><img src="./../../../images/icons/comodo.png" alt="comodo"></i></li>
+                            <li class="security_item"><i class="ico"><a href="/./../../../images/pci-dss-certificate.jpg"><img src="/images/icons/pci-dss.png" alt="psi dss"></a></i></li>
                         </ul>
                     </div>
                 </div>
