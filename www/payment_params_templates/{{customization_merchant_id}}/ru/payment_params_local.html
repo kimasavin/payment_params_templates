@@ -82,7 +82,7 @@
 
             <div id="timer" class="hidden">
                 Время на оплату: <span class="minutes">00</span>:<span class="seconds">00</span>
-                <input type="hidden" name="expireDate" value="2019-05-20 22:23:59" />
+                <input type="hidden" name="expireDate" value="2019-06-17 23:00:59" />
             </div>
             <div id="timeExpiredMessage" class="hidden">
                 К сожалению, время, отведенное на оплату, истекло. Пожалуйста, перейдите в <a href="google.com">мероприятие</a> и сделайте выбор заново.
@@ -405,11 +405,7 @@
         <footer class="footer footer_ind">
             <div class="footer_in">
                 <div class="footer_row">
-                    <div class="footer_left">
-                        <!--POSTPONED_PAYMENT-->
-                        <button class="btn btn_white js_popup_pospone_open" type="button">Отложить оплату заказа</button>
-                        <!--/POSTPONED_PAYMENT-->
-                    </div>
+                    <div class="footer_left"></div>
                     <div class="footer_right">
                         <div class="support">
                             <div class="support_row">Служба поддержки:</div>
@@ -423,32 +419,11 @@
                     <div class="footer_right">
                         <ul class="security">
                             <li class="security_item"><i class="ico"><img src="./../../../images/icons/comodo.png" alt="comodo"></i></li>
-                            <li class="security_item"><i class="ico"><a href="/./../../../images/pci-dss-certificate.jpg"><img src="/images/icons/pci-dss.png" alt="psi dss"></a></i></li>
+                            <li class="security_item"><i class="ico"><a href="./../../../images/pci-dss-certificate.jpg"><img src="./../../../images/icons/pci-dss.png" alt="psi dss"></a></i></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </footer>
-        <!--POSTPONED_PAYMENT-->
-        <div class="popup js_popup_postpone">
-            <div class="popup_in js_popup_postpone_content">
-                <button class="popup_btn_close js_popup_pospone_close" type="button"></button>
-                <div class="popup_title">Отложить платеж</div>
-                <p>Укажите email, на который будет выслана ссылка, перейдя по которой Вы сможете завершить оплату до 2020-10-10</p>
-                <div class="form">
-                    <form method="POST">
-                        <div class="form_label">E-mail</div>
-                        <div class="form_field">
-                            <input name="postpone_email" placeholder="ivanov@gmail.com" type="email" value="">
-                        </div>
-                        <div class="form_bottom">
-                            <button class="btn btn_white js_popup_pospone_close" type="button">Отмена</button>
-                            <button class="btn btn_green"><span>Отправить</span></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--/POSTPONED_PAYMENT-->
     </body>
 </html>
