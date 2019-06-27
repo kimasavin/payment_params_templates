@@ -17,7 +17,7 @@
 }
 
 body {
-    background: url("/payment_params_templates/{{customization_merchant_id}}/images/background.png") repeat;
+    background: url("../images/background.png") repeat;
 }
 
 .order .order_more {
